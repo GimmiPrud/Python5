@@ -12,6 +12,9 @@ def CercaStringaInNomeFile(sFile,sStringa):
         return False  
 # torniamo True o False  
 
+def CercaStringaInContenutofile(sPathfile,sStringa):
+    return False
+
 
 sRoot = input("inserisci directory in cui cercare:")
 sParola = input("inserisci parola da cercare:")
@@ -26,7 +29,9 @@ for root,dirs,files in os.walk(sRoot):
         if bRet ==True: 
             inumfiletrovati += 1
         else:
-         #  bRet = CercaStringaInContenutofile()
-            pass    
+            sFilepathcompleto = os.path.join(root,file)
+            bRet = CercaStringaInContenutofile(sFilepathcompleto,sParola)
+            if (bRet == True):
+                pass
 
 print(f" Ho trovato {inumfiletrovati} Files")
