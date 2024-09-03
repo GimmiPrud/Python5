@@ -13,8 +13,8 @@ def CercaStringaInNomeFile(sFile,sStringa):
 # torniamo True o False
 
 def CercaStringaInTextfile(sFile,sStringa):
+    iRet = -1
     with open(sFile,"r") as file1:
-        sRiga = ""
         sRiga = file1.readline()
         while (len(sRiga)>0):
             iRet = sRiga.lower().find(sStringa.lower())
