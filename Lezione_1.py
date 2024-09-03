@@ -1,5 +1,6 @@
 # Giammarco Prudenzi
 import os
+import PyPDF2
 
 def CercaStringaInNomeFile(sFile,sStringa):
 # mettiamo tutto minuscolo
@@ -23,7 +24,15 @@ def CercaStringaInTextfile(sFile,sStringa):
             sRiga = file1.readline()
     return False
 
-def CercaStringaInPdffile(sFile,sTringa):
+def CercaStringaInPdffile(sFile,sStringa):
+    object = PyPDF2.PdfReader(sFile)
+    numPages = len(object.pages)
+    for i in range(0, numPages):
+        pageObj = object.pages[i]
+        text = pageObj.extract_text()
+        text = text.lower()
+        if(text.find(sStringa)!=-1):
+            return True
     return False
 
 def CercaStringaInContenutofile(sPathfile,sStringa):
