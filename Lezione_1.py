@@ -68,3 +68,4 @@ for root,dirs,files in os.walk(sRoot):
 
 print(f" Ho trovato {inumfiletrovati} Files")
 
+
