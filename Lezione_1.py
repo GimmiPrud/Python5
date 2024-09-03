@@ -54,6 +54,8 @@ for root,dirs,files in os.walk(sRoot):
             bRet = CercaStringaInContenutofile(sFilepathcompleto,sParola)
             if (bRet == True):
                 inumfiletrovati += 1
+        if bRet == True:
+            print("Trovata parola in file" + file)
 
 print(f" Ho trovato {inumfiletrovati} Files")
 
