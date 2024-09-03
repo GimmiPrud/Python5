@@ -35,3 +35,4 @@ for root,dirs,files in os.walk(sRoot):
                 pass
 
 print(f" Ho trovato {inumfiletrovati} Files")
+
