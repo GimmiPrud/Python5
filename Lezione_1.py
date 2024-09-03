@@ -10,10 +10,31 @@ def CercaStringaInNomeFile(sFile,sStringa):
         return True
     else:
         return False  
-# torniamo True o False  
+# torniamo True o False
+
+def CercaStringaInTextfile(sFile,sStringa):
+    with open(sFile,"r") as file1:
+        sRiga = ""
+        sRiga = file1.readline()
+        while (len(sRiga)>0):
+            iRet = sRiga.lower().find(sStringa.lower())
+            if (iRet >=0):
+                return True
+            sRiga = file1.readline()
+    return False
+
+def CercaStringaInPdffile(sFile,sTringa):
+    return False
 
 def CercaStringaInContenutofile(sPathfile,sStringa):
-    return False
+    sOutFileName,sOutFileExt = os.path.splitext(sPathfile)
+    if sOutFileExt.lower() == ".txt":
+        bRet = CercaStringaInTextfile(sPathfile,sStringa)
+    
+    if sOutFileExt.lower()==".pdf":
+        bRet = CercaStringaInPdffile(sPathfile,sStringa)
+
+    return bRet
 
 
 sRoot = input("inserisci directory in cui cercare:")
@@ -32,7 +53,7 @@ for root,dirs,files in os.walk(sRoot):
             sFilepathcompleto = os.path.join(root,file)
             bRet = CercaStringaInContenutofile(sFilepathcompleto,sParola)
             if (bRet == True):
-                pass
+                inumfiletrovati += 1
 
 print(f" Ho trovato {inumfiletrovati} Files")
 
