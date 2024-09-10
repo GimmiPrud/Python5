@@ -6,8 +6,8 @@ RUN ls -l
 RUN pip install flask
 # aggiunta pagine html  create sul computer fisico sul container 
 RUN mkdir templates
-ADD ./templates/index.html .templates
-ADD ./templates/index2.html .templates
+ADD ./templates/index.html ./templates
+ADD ./templates/index2.html ./templates
 # mapping tra le porte
 CMD ["python","./server.py"] 
 
