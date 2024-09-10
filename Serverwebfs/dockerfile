@@ -1,7 +1,14 @@
-
+# creazione container 
 FROM python:3.10-alpine
 ADD server.py .
-ADD templates .
+RUN ls -l
+# installazione flask
+RUN pip install flask
+# aggiunta pagine html precedentemente create su computer fisico 
+RUN mkdir templates
+ADD ./templates/index.html .templates
+ADD ./templates/index2.html .templates
+# mapping tra le porte
 CMD ["python","./server.py"]
 
 
