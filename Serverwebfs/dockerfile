@@ -2,9 +2,9 @@
 FROM python:3.10-alpine
 ADD server.py .
 RUN ls -l
-# installazione flask
+# installazione flask sul container 
 RUN pip install flask
-# aggiunta pagine html precedentemente create su computer fisico 
+# aggiunta pagine html  create sul computer fisico sul container 
 RUN mkdir templates
 ADD ./templates/index.html .templates
 ADD ./templates/index2.html .templates
