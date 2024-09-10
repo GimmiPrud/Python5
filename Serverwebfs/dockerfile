@@ -9,7 +9,7 @@ RUN mkdir templates
 ADD ./templates/index.html .templates
 ADD ./templates/index2.html .templates
 # mapping tra le porte
-CMD ["python","./server.py"]
+CMD ["python","./server.py"] 
 
 
 
