@@ -7,7 +7,7 @@ def index():
     return render_template('index.html')
 
 
-@api.route('/', methods = ['GET'])
+@api.route('/v', methods = ['GET'])
 def indexx():
     return render_template('index2.html')
 
