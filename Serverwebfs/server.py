@@ -13,12 +13,12 @@ def indexx():
 
 
 @api.route('/', methods = ['GET'])
-def reg_ok():
+def regok():
     return render_template('reg_ok')
 
 
 @api.route('/', methods = ['GET'])
-def reg_ko():
+def regko():
     return render_template('reg_ko')
 
 api.run(host="0.0.0.0",port=8085) 
