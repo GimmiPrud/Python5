@@ -11,6 +11,16 @@ def index():
 def indexx():
     return render_template('index2.html')
 
+
+@api.route('/n', methods = ['GET'])
+def reg_ok():
+    return render_template('reg_ok')
+
+
+@api.route('//', methods = ['GET'])
+def reg_ko():
+    return render_template('reg_ko')
+
 api.run(host="0.0.0.0",port=8085) 
 
 
