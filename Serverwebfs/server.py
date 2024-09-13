@@ -11,7 +11,7 @@ def index():
 def indexx():
     return render_template('index2.html')
 
-api.run(host="0.0.0.0",port=8085)
+api.run(host="0.0.0.0",port=8085) 
 
 
 
