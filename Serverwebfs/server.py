@@ -9,17 +9,17 @@ def index():
     return render_template('index.html')
 
 
-@api.route('/', methods = ['GET'])
+@api.route('/a', methods = ['GET'])
 def indexx():
     return render_template('index2.html')
 
 
-@api.route('/', methods = ['GET'])
+@api.route('/ok', methods = ['GET'])
 def regok():
     return render_template('reg_ok.html')
 
 
-@api.route('/', methods = ['GET'])
+@api.route('/ko', methods = ['GET'])
 def regko():
     return render_template('reg_ko.html')
 
