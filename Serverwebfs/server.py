@@ -17,7 +17,7 @@ def reg_ok():
     return render_template('reg_ok')
 
 
-@api.route('//', methods = ['GET'])
+@api.route('/r', methods = ['GET'])
 def reg_ko():
     return render_template('reg_ko')
 
