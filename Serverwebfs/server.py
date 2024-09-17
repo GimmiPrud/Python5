@@ -20,9 +20,9 @@ def regko():
 
 @api.route('/registrati', methods = ['GET'])
 def registrati():
-    pass
+    return render_template('reg_ok.html')
     
-api.run(host="0.0.0.0",port=8085) 
+api.run(host="0.0.0.0",port=8085)  
 
 
 
