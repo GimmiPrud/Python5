@@ -20,7 +20,16 @@ def regko():
 
 @api.route('/registrati', methods = ['GET'])
 def registrati():
-    return render_template('reg_ok.html')
+    nome = request.args.get('nome')
+    password = request.args.get('cognome')
+
+    utente = []
+    utente.append(nome)
+    utente.append(password)
+    utente.append('0')
+
+    if utente in utenti:
+        pass
     
 api.run(host="0.0.0.0",port=8085)  
 
