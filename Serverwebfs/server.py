@@ -22,7 +22,7 @@ def regko():
 def registrati():
     pass
     
-api.run(host="0.0.0.0",port=8085)  
+api.run(host="0.0.0.0",port=8085) 
 
 
 
