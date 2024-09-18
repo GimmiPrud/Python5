@@ -29,7 +29,9 @@ def registrati():
     utente.append('0')
 
     if utente in utenti:
-        pass
+        return render_template('reg_ok.html')
+    else:
+        return render_template('reg_ko.html')
     
 api.run(host="0.0.0.0",port=8085)  
 
