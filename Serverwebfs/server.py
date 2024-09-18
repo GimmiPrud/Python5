@@ -28,13 +28,6 @@ def registrati():
     utente.append(password)
     utente.append('0')
 
-    for u in utenti:
-        for i in utente:
-            if i[0] and i[1] and i[2] in u:
-                return render_template('reg_ok.html')
-            else:
-                return render_template('reg_ko.html')
-
     
 api.run(host="0.0.0.0",port=8085)  
 
