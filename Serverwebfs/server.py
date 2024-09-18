@@ -29,7 +29,7 @@ def registrati():
     utente.append('0')
 
     for u in utenti:
-        if u[0] == nome and u[1] == password and u[2] == '0':
+        if u[0] == utente[0] and u[1] == password and u[2] == '0':
             return render_template('reg_ok.html')
         else:
             return render_template('reg_ko.html')
