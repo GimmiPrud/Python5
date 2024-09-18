@@ -28,6 +28,7 @@ def registrati():
     utente.append(password)
     utente.append('0')
 
+
     
 api.run(host="0.0.0.0",port=8085)  
 
