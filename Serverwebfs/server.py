@@ -31,12 +31,11 @@ def registra():
         return render_template('reg_ko.html')
     
 
-@api.route('/registrati', methods = ['GET'])
+@api.route('/accedi', methods = ['GET'])
 def accedi():
     nome = request.args.get('nome')
     password = request.args.get('password')
-
-    utente = [nome,password,'0']
+    
 
 
 
