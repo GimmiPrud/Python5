@@ -26,13 +26,12 @@ def registra():
     utente = [nome,password,'0']
 
     if utente in utenti:
-        if (utente[0] == nome) and (utente[1] == password):
-            return render_template('reg_ok.html')
-    return render_template('reg_ko.html')
+        return render_template('reg_ok.html')
+    else:
+        return render_template('reg_ko.html')
+    
 
-
-if __name__ == "__main__":   
-    api.run(host="0.0.0.0",port=8085)  
+api.run(host="0.0.0.0",port=8085)  
 
 
 
