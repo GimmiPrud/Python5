@@ -1,6 +1,6 @@
 # Giammarco Prudenzi
 import os
-import PyPDF2
+import PyPDF2 
 
 def CercaStringaInNomeFile(sFile,sStringa):
 # mettiamo tutto minuscolo
@@ -67,5 +67,6 @@ for root,dirs,files in os.walk(sRoot):
             print("Trovata parola in file" + file)
 
 print(f" Ho trovato {inumfiletrovati} Files")
+
 
 
