@@ -36,7 +36,7 @@ def accedi():
     nome = request.args.get('nome')
     password = request.args.get('password')
 
-    utente = [nome,password]
+    utente = [nome,password,'0']
 
 
 
