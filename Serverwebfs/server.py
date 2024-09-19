@@ -31,7 +31,7 @@ def registra():
         return render_template('reg_ko.html')
     
 
-api.run(host="0.0.0.0",port=8085)  
+api.run(host="0.0.0.0",port=8085) 
 
 
 
