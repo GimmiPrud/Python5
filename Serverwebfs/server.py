@@ -24,7 +24,6 @@ def accesso():
     return render_template('accedi.html')
 
 
-
 @api.route('/registrazione', methods = ['GET'])
 def registra():
     nome = request.args.get('nome')
