@@ -32,6 +32,8 @@ def registrazione():
     utente = [nome,password,'0']
 
     if utente in utenti:
+        ind = utenti.index(utente)
+        utenti[ind][3] ='1'
         return render_template('reg_ok.html')
     else:
         return render_template('reg_ko.html')
