@@ -52,7 +52,6 @@ def accedi():
 
 # -------------------------------------------------------------------------#
 
-
 @api.route('/reg_log', methods = ['GET'])
 def reg_log():
     return render_template('button_reg_log.html')
