@@ -33,7 +33,7 @@ def registrazione():
 
     if utente in utenti:
         ind = utenti.index(utente)
-        utenti[ind][2] =='1'
+        utenti[ind][2] ='1'
         return render_template('reg_ok.html')
     else:
         return render_template('reg_ko.html')
@@ -47,11 +47,12 @@ def accedi():
     for utente in utenti:
         if utente[0]== nome and utente[1]== password and utente[2]=='1':
             return render_template('reg_ok.html')
-        else:
-            return render_template('reg_ko.html')
+        
+    return render_template('reg_ko.html')
 
 
-api.run(host="0.0.0.0",port=8085) 
+if __name__ == "__main__":
+    api.run(host="0.0.0.0",port=8085) 
 
 
 
