@@ -30,15 +30,7 @@ def registra():
     else:
         return render_template('reg_ko.html')
     
-
-@api.route('/accedi', methods = ['GET'])
-def accedi():
-    nome = request.args.get('nome')
-    password = request.args.get('password')
-    
-
-
-
+            
 
 api.run(host="0.0.0.0",port=8085) 
 
