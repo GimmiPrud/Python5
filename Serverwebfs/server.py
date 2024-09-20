@@ -25,7 +25,7 @@ def accesso():
 
 
 
-@api.route('/registrati', methods = ['GET'])
+@api.route('/registrazione', methods = ['GET'])
 def registra():
     nome = request.args.get('nome')
     password = request.args.get('password')
