@@ -1,6 +1,6 @@
 # Giammarco Prudenzi
 import os
-import PyPDF2  # type: ignore
+import PyPDF2 
 
 def CercaStringaInNomeFile(sFile,sStringa):
 # mettiamo tutto minuscolo
