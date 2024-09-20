@@ -48,7 +48,7 @@ def accedi():
         if utente[0]== nome and utente[1]== password and utente[2]=='1':
             return render_template('reg_ok.html')
         
-    return render_template('reg_ko.html')
+        return render_template('reg_ko.html')
 
 
 if __name__ == "__main__":
