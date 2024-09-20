@@ -19,7 +19,7 @@ def regko():
     return render_template('reg_ko.html')
 
 
-@api.route('/reg_ko', methods = ['GET'])
+@api.route('/accesso', methods = ['GET'])
 def accesso():
     render_template('accedi.html')
 
