@@ -33,8 +33,9 @@ def registra():
 
 @api.route('/accedi', methods = ['GET'])
 def accedi():
-    pass
-    
+    nome = request.args.get('nome')
+    password = request.args.get('password')
+     
             
 
 api.run(host="0.0.0.0",port=8085) 
