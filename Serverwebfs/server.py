@@ -21,7 +21,7 @@ def regko():
 
 @api.route('/accesso', methods = ['GET'])
 def accesso():
-    render_template('accedi.html')
+    return render_template('accedi.html')
 
 
 
