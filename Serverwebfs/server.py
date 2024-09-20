@@ -8,6 +8,7 @@ utenti = [['lucio','password1','0'],['gianni','passwoe','0'],['alessia','delaie'
 def index():
     return render_template('index.html')
 
+
 @api.route('/reg_ok', methods = ['GET'])
 def regok():
     return render_template('reg_ok.html')
@@ -16,6 +17,7 @@ def regok():
 @api.route('/reg_ko', methods = ['GET'])
 def regko():
     return render_template('reg_ko.html')
+
 
 @api.route('/reg_ko', methods = ['GET'])
 def accesso():
@@ -46,6 +48,7 @@ def accedi():
             return render_template('reg_ok.html')
         else:
             return render_template('reg_ko.html')
+
 
 
 if __name__ == '__main__':
