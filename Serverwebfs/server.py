@@ -6,7 +6,7 @@ utenti = [['lucio','password1','0'],['gianni','passwoe','0'],['alessia','delaie'
 
 @api.route('/', methods = ['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('registrazione.html')
 
 
 @api.route('/reg_ok', methods = ['GET'])
@@ -33,6 +33,8 @@ def registra():
     utente = [nome,password,'0']
 
     if utente in utenti:
+        ind = utenti.index(utente)
+        utenti[ind][3] = '1'
         return render_template('reg_ok.html')
     else:
         return render_template('reg_ko.html')
@@ -46,8 +48,8 @@ def accedi():
     for utente in utenti:
         if utente[0]==nome and utente[1]==password and utente[2]=='1':
             return render_template('reg_ok.html')
-        else:
-            return render_template('reg_ko.html')
+        
+    return render_template('reg_ko.html')
 
 
 
