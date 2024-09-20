@@ -50,6 +50,14 @@ def accedi():
         
         return render_template('reg_ko.html')
 
+# -------------------------------------------------------------------------#
+
+
+@api.route('/reg_log', methods = ['GET'])
+def reg_log():
+    return render_template('button_reg_log.html')
+
+
 
 if __name__ == "__main__":
     api.run(host="0.0.0.0",port=8085) 
