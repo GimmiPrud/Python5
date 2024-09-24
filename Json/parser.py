@@ -1,5 +1,6 @@
 
-
+# ES.
+'''
 mylist_1 = "[mario, gino, lucrezia]"
 mylist_2 = ["mario","gino","lucrezia"]
 
@@ -21,3 +22,4 @@ def deseriallizza_lista(s_var: list)-> list:
 s_prova = deseriallizza_lista(mylist_1)
 if s_prova == mylist_2:
     print("procedura avvenuta con successo")
+    '''
