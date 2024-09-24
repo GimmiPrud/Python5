@@ -5,7 +5,7 @@ mylist_2 = ["mario","gino","lucrezia"]
 
 def serializza_lista( l_var: list)-> str:
     l_var_1 = str(l_var)
-    return l_var_1
+    print(l_var_1)
 
 
 def deseriallizza_lista(s_var: list)-> list:
