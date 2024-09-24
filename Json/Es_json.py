@@ -14,7 +14,15 @@ mydict_2 = "{ 'brand':   'Ford'," + \
 
 
 def SerializaJson(dData,file_path):
-    pass
+    sData = json.dumps(dData)
+    try:
+        with open(file_path,"w") as myfile:
+            myfile.write(sData)
+            return True
+    except:
+        return False
+    
+
 
 def DeserializeJson(file_path):
     pass
