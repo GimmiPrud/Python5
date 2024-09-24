@@ -13,3 +13,5 @@ def deseriallizza_lista(string_var: list)-> list:
 
 
 
+print(serializza_lista(mylist_2))
+print(deseriallizza_lista(mylist_1))
