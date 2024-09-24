@@ -23,3 +23,5 @@ s_prova = deseriallizza_lista(mylist_1)
 if s_prova == mylist_2:
     print("procedura avvenuta con successo")
 '''
+
+#-------------------------------------------------------#
