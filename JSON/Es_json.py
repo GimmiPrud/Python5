@@ -33,9 +33,6 @@ def DeserializzaJson(file_path: str)-> dict:
 print(DeserializzaJson("JSON/dict.json"))
 
 
-
-
-
 json.dump()
 str1 = json.dumps(mydict_1)
 
