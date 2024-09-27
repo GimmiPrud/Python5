@@ -1,5 +1,6 @@
 from flask import Flask,json,request
 from myJson import JsonSerialize,JsonDeserialize
+import json
 
 sFileAnagrafe = "./anagrafe.json"
 api = Flask(__name__)
@@ -9,7 +10,7 @@ def GestisciAddCittadino():
 #prendi i dati della richiesta
     content_type = request.headers.get('Content-Type')
     print("Ricevuta chiamata " + content_type)
-    if content_type == "application/json":
+    if content_type == "REST4/json":
         jRequest = request.json
         sCodiceFiscale = jRequest["codice fiscale"]
         print("Ricevuto " + sCodiceFiscale)
