@@ -18,7 +18,7 @@ def GestisciAddCittadino():
     else:
         return "Errore , formato non riconosciuto",401
 #controlla che il cittadino non è gia presente in anagrafe
-#rispondi
+#rispondi 
 
 
 
