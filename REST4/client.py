@@ -10,6 +10,7 @@ def Richiedi_dati_cittadino():
     j_request = {"nome": nome, "cognome": cognome, "data nascita": data_nascita, "codice fiscale": codice_fiscale}
     return j_request
 
+
 def CreaInterfaccia():
     print("Operazioni disponibili")
     print("1. Inserisci cittadino (es. atto di nascita)")
@@ -18,11 +19,11 @@ def CreaInterfaccia():
     print("4. Elimina Cittadino")
     print("5. Exit")
 
+
 CreaInterfaccia()
-sOper = input("Seleziona operazione")
+sOper = input("Seleziona operazione: ")
 while (sOper != "5"):
     if sOper == "1":
-        djson = Richiedi_dati_cittadino()
         api_url = base_url + "/add_cittadino"
         json_data_request = Richiedi_dati_cittadino()
         try:
