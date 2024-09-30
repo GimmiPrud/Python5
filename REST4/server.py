@@ -27,8 +27,7 @@ def GestisciAddCittadino():
     else:
         return "Errore , formato non riconosciuto",401
     
-    #controlla che il cittadino non è gia presente in anagrafe
-    #rispondi
+    
 
 @api.route('/Richiedi_dati_cittadino', methods = ['POST'])
 def Gestisci_richiedi_dati():
@@ -40,8 +39,16 @@ def Gestisci_richiedi_dati():
 
         #carichiamo l'anagrafe
         dAnagrafe = JsonDeserialize(sFileAnagrafe)
-
-
+        
+        if sCodiceFiscale in dAnagrafe:
+            info = dAnagrafe[sCodiceFiscale]
+            jResponse = {"Error" : "000" , "Msg": "Ok"}
+            return json.dumps(jResponse),200 #200 è il codice del http
+        else:
+            jResponse = {"Error" : "001" , "Msg": "codice fiscale non presente"}
+            return json.dumps(jResponse),200
+            
+            
 
 @api.route('/Modifica_dati_cittadino', methods = ['POST'])
 def Gestisci_modifica_dati():
@@ -53,8 +60,25 @@ def Gestisci_modifica_dati():
 
         #carichiamo l'anagrafe
         dAnagrafe = JsonDeserialize(sFileAnagrafe)
-
-
+        
+        if sCodiceFiscale in dAnagrafe:
+            info = dAnagrafe[sCodiceFiscale]
+            
+            if "nome" in jRequest:
+                info["nome"] = jRequest["nome"]
+            if "cognome" in jRequest:
+                info["cognome"] = jRequest["cognome"]
+            if "data nascita" in jRequest:
+                info["data nascita"] = jRequest["data nascita"]
+                
+            dAnagrafe[sCodiceFiscale] = info 
+            JsonSerialize(dAnagrafe,sFileAnagrafe)
+            jResponse = {"Error" : "000" , "Msg": "Ok","info": info}
+            return json.dumps(jResponse),200 
+        else:
+            jResponse = {"Error" : "001" , "Msg": "codice fiscale non presente"}
+            return json.dumps(jResponse),200
+            
 
 @api.route('/Elimina_cittadino', methods = ['POST'])
 def Gestisci_elimina_dati():
@@ -66,7 +90,15 @@ def Gestisci_elimina_dati():
 
         #carichiamo l'anagrafe
         dAnagrafe = JsonDeserialize(sFileAnagrafe)
-
+        
+        if sCodiceFiscale in dAnagrafe:
+            del dAnagrafe[sCodiceFiscale]
+            JsonSerialize(dAnagrafe,sFileAnagrafe)
+            jResponse = {"Error" : "000" , "Msg": "cittadino eliminato",}
+            return json.dumps(jResponse),200
+        else:
+            jResponse = {"Error" : "001" , "Msg": "codice fiscale non presente"}
+            return json.dumps(jResponse),200
 
 
 

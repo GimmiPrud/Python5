@@ -21,19 +21,23 @@ def RichiedidatiCittadino():
     return jRequest
 
 
-
 def richiedi_dati():
     codFiscale = input("Inserisci codice fiscale: ")
     return {"codice fiscale": codFiscale}
 
 
 def modifica_dati():
-    pass
+    codFiscale = input("Inserisci codice fiscale del cittadino da modificare: ")
+    nome = input("Inserisci nuovo nome cittadino: ")
+    cognome = input("Inserisci nuovo cognome cittadino: ")
+    dataNascita = input("inserisci nuova data nascita: ")
+    jRequest = {"nome": nome , "cognome" : cognome, "data nascita": dataNascita,"codice fiscale" :codFiscale}
+    return jRequest
 
 
 def elimina_dati():
-    pass
-
+    codFiscale = input("Inserisci codice fiscale: ")
+    return {"codice fiscale": codFiscale}
 
 
 CreaInterfaccia()
@@ -54,19 +58,51 @@ while (sOper != "5"):
         except:
             print("\nProblemi di comunicazione con il server.. \tRIPROVA PIU TARDI.")
 
+
     if sOper == "2":
         api_url = base_url + "/Richiedi_dati_cittadino"
         jsonDataRequest = richiedi_dati()
+        
+        try:
+            response = requests.post(api_url,json=jsonDataRequest)
+            print(response.status_code)
+            print(response.headers["Content-Type"])
+            data1 = response.json()
+            print(data1)
+
+        except:
+            print("\nProblemi di comunicazione con il server.. \tRIPROVA PIU TARDI.")
+        
 
 
     if sOper == "3":
         api_url = base_url + "/Modifica_dati_cittadino"
         jsonDataRequest = modifica_dati()
+        
+        try:
+            response = requests.post(api_url,json=jsonDataRequest)
+            print(response.status_code)
+            print(response.headers["Content-Type"])
+            data1 = response.json()
+            print(data1)
+
+        except:
+            print("\nProblemi di comunicazione con il server.. \tRIPROVA PIU TARDI.")
 
 
     if sOper == "4":
         api_url = base_url + "/Elimina_cittadino"
         jsonDataRequest = elimina_dati()
+        
+        try:
+            response = requests.post(api_url,json=jsonDataRequest)
+            print(response.status_code)
+            print(response.headers["Content-Type"])
+            data1 = response.json()
+            print(data1)
+
+        except:
+            print("\nProblemi di comunicazione con il server.. \tRIPROVA PIU TARDI.")
 
 
     CreaInterfaccia()
