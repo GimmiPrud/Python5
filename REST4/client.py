@@ -38,18 +38,34 @@ def elimina_dati():
 CreaInterfaccia()
 sOper = input ("\nSeleziona operazione ")
 while (sOper != "5"):
+
     if sOper == "1":
         api_url = base_url + "/add_cittadino"
         jsonDataRequest = RichiedidatiCittadino()
-    try:
-        response = requests.post(api_url,json=jsonDataRequest)
-        print(response.status_code)
-        print(response.headers["Content-Type"])
-        data1 = response.json()
-        print(data1)
 
-    except:
-        print("\nProblemi di comunicazione con il server.. \tRIPROVA PIU TARDI.")
+        try:
+            response = requests.post(api_url,json=jsonDataRequest)
+            print(response.status_code)
+            print(response.headers["Content-Type"])
+            data1 = response.json()
+            print(data1)
+
+        except:
+            print("\nProblemi di comunicazione con il server.. \tRIPROVA PIU TARDI.")
+
+    if sOper == "2":
+        api_url = base_url + "/Richiedi_dati_cittadino"
+        jsonDataRequest = richiedi_dati()
+
+
+    if sOper == "3":
+        api_url = base_url + "/Modifica_dati_cittadino"
+        jsonDataRequest = modifica_dati()
+
+
+    if sOper == "4":
+        api_url = base_url + "/Elimina_cittadino"
+        jsonDataRequest = elimina_dati()
 
 
     CreaInterfaccia()
