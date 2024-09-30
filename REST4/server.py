@@ -31,19 +31,19 @@ def GestisciAddCittadino():
 
 
 @api.route('/Richiedi_dati_cittadino', methods = ['POST'])
-def richiedi_dati():
+def Gestisci_richiedi_dati():
      content_type = request.headers.get('Content-Type')
 
 
 
 @api.route('/Modifica_dati_cittadino', methods = ['POST'])
-def modifica_dati():
+def Gestisci_modifica_dati():
      content_type = request.headers.get('Content-Type')
 
 
 
 @api.route('/Elimina_cittadino', methods = ['POST'])
-def elimina_dati():
+def Gestisci_elimina_dati():
      content_type = request.headers.get('Content-Type')
 
 
