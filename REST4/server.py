@@ -48,7 +48,6 @@ def elimina_dati():
 
 
 
-
 @api.route('/', methods = ['GET'])
 def manageget():
     return "Ciao a tutti"
