@@ -25,9 +25,28 @@ def GestisciAddCittadino():
             return json.dumps(jResponse),200
     else:
         return "Errore , formato non riconosciuto",401
-
     #controlla che il cittadino non è gia presente in anagrafe
     #rispondi
+
+
+@api.route('/Richiedi_dati_cittadino', methods = ['POST'])
+def richiedi_dati():
+    pass
+
+
+
+@api.route('/Modifica_dati_cittadino', methods = ['POST'])
+def modifica_dati():
+    pass
+
+
+
+@api.route('/Elimina cittadino', methods = ['POST'])
+def richiedi_dati():
+    pass
+
+
+
 
 @api.route('/', methods = ['GET'])
 def manageget():
