@@ -19,6 +19,19 @@ def RichiedidatiCittadino():
     jRequest = {"nome": nome , "cognome" : cognome, "data nascita": dataNascita,"codice fiscale" :codFiscale}
     return jRequest
 
+
+def richiedi_dati():
+    pass
+
+
+def modifica_dati():
+    pass
+
+
+def elimina_dati():
+    pass
+
+
 CreaInterfaccia()
 sOper = input ("\nSeleziona operazione ")
 while (sOper != "5"):
@@ -38,3 +51,5 @@ while (sOper != "5"):
 
     CreaInterfaccia()
     sOper = input("\nSeleziona operazione ")
+
+
