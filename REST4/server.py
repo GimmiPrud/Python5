@@ -13,6 +13,7 @@ def GestisciAddCittadino():
         jRequest = request.json
         sCodiceFiscale = jRequest["codice fiscale"]
         print("Ricevuto " + sCodiceFiscale)
+        
         #carichiamo l'anagrafe
         dAnagrafe = JsonDeserialize(sFileAnagrafe)
         if sCodiceFiscale not in dAnagrafe:

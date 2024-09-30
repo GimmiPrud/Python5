@@ -20,6 +20,21 @@ def RichiedidatiCittadino():
     return jRequest
 
 
+
+def richiedi_dati():
+    pass
+
+
+def modifica_dati():
+    pass
+
+
+def elimina_dati():
+    pass
+
+
+
+
 CreaInterfaccia()
 sOper = input ("\nSeleziona operazione ")
 while (sOper != "5"):
@@ -41,14 +56,3 @@ while (sOper != "5"):
     sOper = input("\nSeleziona operazione ")
 
 
-
-def richiedi_dati():
-    pass
-
-
-def modifica_dati():
-    pass
-
-
-def elimina_dati():
-    pass
