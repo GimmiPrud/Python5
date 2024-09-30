@@ -11,6 +11,7 @@ def CreaInterfaccia():
     print("4. Elimina cittadino")
     print("5. Exit")
 
+
 def RichiedidatiCittadino():
     nome = input("Inserisci nome cittadino: ")
     cognome = input("Inserisci cognome cittadino: ")
@@ -31,7 +32,6 @@ def modifica_dati():
 
 def elimina_dati():
     pass
-
 
 
 
