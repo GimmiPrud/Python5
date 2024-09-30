@@ -23,7 +23,8 @@ def RichiedidatiCittadino():
 
 
 def richiedi_dati():
-    pass
+    codFiscale = input("Inserisci codice fiscale: ")
+    return {"codice fiscale": codFiscale}
 
 
 def modifica_dati():

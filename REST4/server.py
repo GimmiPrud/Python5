@@ -33,21 +33,39 @@ def GestisciAddCittadino():
 @api.route('/Richiedi_dati_cittadino', methods = ['POST'])
 def Gestisci_richiedi_dati():
     content_type = request.headers.get('Content-Type')
-    pass
+    if content_type == "application/json":
+        jRequest = request.json
+        sCodiceFiscale = jRequest["codice fiscale"]
+        print("Ricevuto " + sCodiceFiscale)
+
+        #carichiamo l'anagrafe
+        dAnagrafe = JsonDeserialize(sFileAnagrafe)
 
 
 
 @api.route('/Modifica_dati_cittadino', methods = ['POST'])
 def Gestisci_modifica_dati():
     content_type = request.headers.get('Content-Type')
-    pass
+    if content_type == "application/json":
+        jRequest = request.json
+        sCodiceFiscale = jRequest["codice fiscale"]
+        print("Ricevuto " + sCodiceFiscale)
+
+        #carichiamo l'anagrafe
+        dAnagrafe = JsonDeserialize(sFileAnagrafe)
 
 
 
 @api.route('/Elimina_cittadino', methods = ['POST'])
 def Gestisci_elimina_dati():
     content_type = request.headers.get('Content-Type')
-    pass
+    if content_type == "application/json":
+        jRequest = request.json
+        sCodiceFiscale = jRequest["codice fiscale"]
+        print("Ricevuto " + sCodiceFiscale)
+
+        #carichiamo l'anagrafe
+        dAnagrafe = JsonDeserialize(sFileAnagrafe)
 
 
 
