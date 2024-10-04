@@ -73,7 +73,7 @@ while True:
 
 
     elif sOper == 5:
-        print("Buona giornata!")
+        print("Arrivederci e Buona giornata!")
         sys.exit()
 
     else:
