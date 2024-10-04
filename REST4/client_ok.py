@@ -78,6 +78,3 @@ while True:
 
     else:
         print("Operazione non disponibile, riprova.")
-
-
-#
