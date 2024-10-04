@@ -46,6 +46,7 @@ while True:
         jsonDataRequest = GetDatiCittadino()
         response = requests.post(api_url, json=jsonDataRequest)
 
+
     # Richiesta dati cittadino
     elif sOper == 2:
         print("Richiesta dati cittadino")
@@ -53,6 +54,7 @@ while True:
         jsonDataRequest = GetCodicefiscale()
         response = requests.get(api_url + "/" + jsonDataRequest['codFiscale'])
         print(response.json())
+
 
     elif sOper == 3:
         print("Modifica cittadino")
