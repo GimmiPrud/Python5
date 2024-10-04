@@ -7,6 +7,7 @@ api = Flask(__name__)
 file_path = "anagrafe.json"
 cittadini = JsonDeserialize(file_path)
 
+
 @api.route('/add_cittadino', methods=['POST'])
 def GestisciAddCittadino():
     content_type = request.headers.get('Content-Type')
@@ -22,6 +23,7 @@ def GestisciAddCittadino():
     else:
         return 'Content-Type non supportato!'
 
+
 @api.route('/read_cittadino/<codice_fiscale>', methods=['GET'])
 def read_cittadino(codice_fiscale):
     cittadino = cittadini.get(codice_fiscale)
@@ -29,6 +31,7 @@ def read_cittadino(codice_fiscale):
         return jsonify({"Esito": "200", "Msg": "Cittadino trovato", "Dati": cittadino}), 200
     else:
         return jsonify({"Esito": "404", "Msg": "Cittadino non trovato"}), 404
+
 
 @api.route('/update_cittadino', methods=['POST'])
 def update_cittadino():
@@ -44,6 +47,7 @@ def update_cittadino():
             return jsonify({"Esito": "404", "Msg": "Cittadino non trovato"}), 404
     else:
         return 'Content-Type non supportato!'
+
 
 @api.route('/elimina_cittadino', methods=['POST'])
 def elimina_cittadino():
