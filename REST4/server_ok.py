@@ -81,6 +81,7 @@ api.run(host="127.0.0.1", port=8080)
 # file_path = "anagrafe.json"
 # cittadini = JsonDeserialize(file_path)
 
+
 # @api.route('/add_cittadino', methods=['POST'])
 # def GestisciAddCittadino():
 #     content_type = request.headers.get('Content-Type')
@@ -123,7 +124,6 @@ api.run(host="127.0.0.1", port=8080)
 #             return jsonify({"Esito": "001", "Msg": "Cittadino non trovato"}), 200
 #     else:
 #         return jsonify({"Esito": "002", "Msg": "Formato richiesta non valido"}), 200
-
 
 
 
