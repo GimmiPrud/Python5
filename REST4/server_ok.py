@@ -32,6 +32,7 @@ def GestisciLogin():
         return jsonify({"Esito": "002", "Msg": "Formato richiesta errato"}) 
                                              
 
+
 @api.route('/add_cittadino', methods=['POST'])
 def GestisciAddCittadino():
     content_type = request.headers.get('Content-Type')
@@ -71,8 +72,6 @@ def read_cittadino(codice_fiscale):
 
 
 
-
-
 @api.route('/update_cittadino', methods=['PUT'])
 def update_cittadino():
 
@@ -92,8 +91,6 @@ def update_cittadino():
             return jsonify({"Esito": "001", "Msg": "Cittadino non trovato"}), 200
     else:
         return jsonify({"Esito": "002", "Msg": "Formato richiesta non valido"}), 200
-
-
 
 
 
