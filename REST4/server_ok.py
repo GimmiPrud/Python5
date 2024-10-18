@@ -65,7 +65,6 @@ def GestisciAddCittadino():
 
 
 
-
 @api.route('/read_cittadino/<codice_fiscale>', methods=['GET'])
 def read_cittadino(codice_fiscale):
 
