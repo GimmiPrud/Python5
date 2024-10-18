@@ -29,19 +29,16 @@ def GestisciLogin():
     if content_type == 'application/json':
         jsonReq = request.json
         sUsernameInseritoDalClient = jsonReq["username"]
-        if sUsernameInseritoDalClient in utenti:
-            sPasswordInseritaDalClient = jsonReq["password"]
-            #------------------------------------------------#
-            # scrivo la query che verrà eseguita nel database 
-            sQuery = "select privilegi from utenti where email ='" + sUsernameInseritoDalClient + "'" and password = "'" + sPasswordInseritaDalClient + "';"
-            print(sQuery)
-            i_num_rows = db.read_in_db(cur,sQuery)
-            if i_num_rows == 1:
-                l_row = db.read_next_row(cur)
-                sPriv = l_row[1] [0]
-                print("Privilegio: " + sPriv)
-                return jsonify({"Esito": "000", "Msg": "Utente registrato", "Privilegio":sPriv}), 200
-            #------------------------------------------------#
+        sPasswordInseritaDalClient = jsonReq["password"]
+        # scrivo la query che verrà eseguita nel database 
+        sQuery = "select privilegi from utenti where email ='" + sUsernameInseritoDalClient + "'" and password = "'" + sPasswordInseritaDalClient + "';"
+        print(sQuery)
+        i_num_rows = db.read_in_db(cur,sQuery)
+        if i_num_rows == 1:
+            l_row = db.read_next_row(cur)
+            sPriv = l_row[1] [0]
+            print("Privilegio: " + sPriv)
+            return jsonify({"Esito": "000", "Msg": "Utente registrato", "Privilegio":sPriv}), 200
         else:
             return jsonify({"Esito": "001", "Msg": "Credenziali errate"})
     else:
