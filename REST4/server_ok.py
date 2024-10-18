@@ -19,9 +19,6 @@ file_path_users = "utenti.json"
 utenti = JsonDeserialize(file_path_users)
 
 
-
-
-
 @api.route('/login', methods=['POST'])
 def GestisciLogin():
     global cur
