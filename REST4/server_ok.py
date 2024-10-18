@@ -37,14 +37,11 @@ def GestisciLogin():
             print(sQuery)
             i_num_rows = db.read_in_db(cur,sQuery)
             if i_num_rows == 1:
-                sPriv = utenti[sUsernameInseritoDalClient]["privilegi"]
+                l_row = db.read_next_row(cur)
+                sPriv = l_row[1] [0]
+                print("Privilegio: " + sPriv)
                 return jsonify({"Esito": "000", "Msg": "Utente registrato", "Privilegio":sPriv}), 200
             #------------------------------------------------#
-            if sPasswordInseritaDalClient == utenti[sUsernameInseritoDalClient]["password"]:
-                sPriv = utenti[sUsernameInseritoDalClient]["privilegi"]
-                return jsonify({"Esito": "000", "Msg": "Utente registrato", "Privilegio":sPriv}), 200
-            else:
-                return jsonify({"Esito": "001", "Msg": "Credenziali errate"})
         else:
             return jsonify({"Esito": "001", "Msg": "Credenziali errate"})
     else:
