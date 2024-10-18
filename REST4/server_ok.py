@@ -1,8 +1,16 @@
 from flask import Flask, jsonify, request
 from myjson import JsonDeserialize, JsonSerialize
+import sys
+import dbclient as db
+
 
 api = Flask(__name__)
 
+# connessione database
+cur = db.connect()
+if cur is None:
+	print("Errore connessione al DB")
+	sys.exit()
 
 file_path = "anagrafe.json"
 cittadini = JsonDeserialize(file_path)
@@ -11,15 +19,27 @@ file_path_users = "utenti.json"
 utenti = JsonDeserialize(file_path_users)
 
 
+
+
+
 @api.route('/login', methods=['POST'])
 def GestisciLogin():
+    global cur
     content_type = request.headers.get('Content-Type')
     if content_type == 'application/json':
-        #{"username":"pippo", "password":"pippo"}
         jsonReq = request.json
         sUsernameInseritoDalClient = jsonReq["username"]
         if sUsernameInseritoDalClient in utenti:
             sPasswordInseritaDalClient = jsonReq["password"]
+            #------------------------------------------------#
+            # scrivo la query che verrà eseguita nel database 
+            sQuery = "select privilegi from utenti where email ='" + sUsernameInseritoDalClient + "'" and password = "'" + sPasswordInseritaDalClient + "';"
+            print(sQuery)
+            i_num_rows = db.read_in_db(cur,sQuery)
+            if i_num_rows == 1:
+                sPriv = utenti[sUsernameInseritoDalClient]["privilegi"]
+                return jsonify({"Esito": "000", "Msg": "Utente registrato", "Privilegio":sPriv}), 200
+            #------------------------------------------------#
             if sPasswordInseritaDalClient == utenti[sUsernameInseritoDalClient]["password"]:
                 sPriv = utenti[sUsernameInseritoDalClient]["privilegi"]
                 return jsonify({"Esito": "000", "Msg": "Utente registrato", "Privilegio":sPriv}), 200
@@ -30,7 +50,6 @@ def GestisciLogin():
     else:
         return jsonify({"Esito": "002", "Msg": "Formato richiesta errato"}) 
                                              
-
 
 @api.route('/add_cittadino', methods=['POST'])
 def GestisciAddCittadino():
