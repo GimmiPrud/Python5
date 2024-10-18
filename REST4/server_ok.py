@@ -103,7 +103,6 @@ def update_cittadino():
 
 
 
-
 @api.route('/elimina_cittadino', methods=['DELETE'])
 def elimina_cittadino():
 
