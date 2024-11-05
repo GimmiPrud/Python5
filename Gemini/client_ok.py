@@ -20,7 +20,6 @@ while iFlag==0:
     print("2. inserisci una coppia (file, domanda): ")
     print("3. Esci")
 
-
     try:
         iOper = int(input("Cosa vuoi fare? "))
     except ValueError:
@@ -34,6 +33,8 @@ while iFlag==0:
         response = requests.post(api_url, json=jsonDataRequest, verify=True) # facciamo la richiesta (contenuta all'interno del Json)
         if response.status_code == 200:
             print(response.json())
+        else:
+            print("attezione risposta errata")
 
 
     elif iOper == 2:
