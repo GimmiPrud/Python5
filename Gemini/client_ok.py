@@ -45,7 +45,7 @@ while iFlag==0:
         iFlag = 1
 
     else:
-        print("operazione non disponibile, riprovare")
+        print("Attenzione, risposta errata")
 
 
 
