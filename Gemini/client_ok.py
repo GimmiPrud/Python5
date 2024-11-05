@@ -31,7 +31,7 @@ while iFlag==0:
         s_query =input("Cosa vui chiedere ?")
         jsonDataRequest = {"contents": [{"parts":[{"text": s_query}]}]} # questa è il tipo di domanda che google si aspetta 
         response = requests.post(api_url, json=jsonDataRequest, verify=True) # facciamo la richiesta (contenuta all'interno del Json)
-        if response.status_code == 200:
+        if response.status_code == 200: # verifichiamo che lo stato della risposta sia giusto (se è 200 di solito significa)
             print(response.json())
         else:
             print("attezione risposta errata")
