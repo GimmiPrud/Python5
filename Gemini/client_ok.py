@@ -34,19 +34,17 @@ while iFlag==0:
         if response.status_code == 200: # verifichiamo che lo stato della risposta sia giusto (se è 200 di solito significa che la richiesta è stata ricevuta con successo e fornisce in risposta il contenuto richiesto)
             print(response.json())
         else:
-            print("attezione risposta errata")
-
+            print("attezione risposta errata")  
 
     elif iOper == 2:
         print("servizio da gestire")
-
 
     elif iOper == 3:
         print("Buona giornata!")
         iFlag = 1
 
     else:
-        print("Attenzione, risposta errata")
+        print("Operazione non disponibile, riprovare")
 
 
 
