@@ -6,7 +6,6 @@ import requests, json, sys
 # recupero un chiave API da google: (per crearla bisogna andare su Google API studio, richiderla e verrà generata)
 # chiave API generata:
 Google_API_KEY = 'AIzaSyDDQ15Eg6rQ-pl6Ed1tn2VxM-HNI7dvnlQ'
-
 sModel = "gemini-1.5-pro-exp-0827" # scegliamo un modello di google gemini 
 base_url = "https://generativelanguage.googleapis.com/v1beta/models/" + sModel + ":generateContent?key="  # creiamo la base dell'Url inserendo anche il modello 
 api_url = base_url + Google_API_KEY 
