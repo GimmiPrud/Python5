@@ -43,7 +43,6 @@ def registra():
 
     #verifica la correttezza 
 
-
     nome = request.args.get("nome")
     #print("Nome inserito:" + nome)
     password = request.args.get("cognome")
