@@ -9,7 +9,6 @@ utenti = [['mario','password1','M','0'],
           ]
 
 
-
 @api.route('/loggati', methods=['GET'])
 def get_code():
     #prendi i dati della form
